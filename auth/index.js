@@ -4,7 +4,7 @@ var User = require("../models").user;
 module.exports = new TwitterStrategy({
     consumerKey: process.env.TWITTER_CONSUMER_KEY,
     consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-    callbackURL: "http://localhost:3000/auth/twitter/callback"
+    callbackURL: "https://animsaj-pinteresting.herokuapp.com/auth/twitter/callback"
 },   function(accessToken, refreshToken, profile, done) {
     User.findOne({ oauthID: profile.id }, function(err, user) {
       if(err) {

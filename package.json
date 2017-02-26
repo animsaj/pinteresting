@@ -1,0 +1,33 @@
+{
+  "name": "pinteresting",
+  "version": "1.0.0",
+  "description": "pinterest clone",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodeJS",
+    "express",
+    "mongoose",
+    "masonryJS",
+    "RESTfull"
+  ],
+  "author": "animsaj",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.14.1",
+    "express-sanitizer": "^1.0.2",
+    "express-session": "^1.15.1",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.8.4",
+    "passport": "^0.3.2",
+    "passport-twitter": "^1.0.4"
+  }
+}

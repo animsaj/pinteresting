@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<title>Pinteresting</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.7/semantic.min.css">
+		<link  rel="stylesheet" type="text/css" href="/style/app.css">
+	</head>
+	<body>
+		<div class="ui top fixed inverted menu">
+			<a class="ui header item" href="/">Pinteresting<i class="map pin icon"></i></a>
+			<% if(error && error.length > 0){ %>
+			<div class="ui negative message">
+				<p><%= error %></p>
+			</div>
+			<% } %>
+			<% if(success && success.length > 0){ %>
+				<div class="ui positive message">
+					<p><%= success %></p>
+				</div>
+			<% } %>
+			<% if(!currentUser){ %>
+				<a class="ui right item right" href="/auth/twitter">Log in</a>
+			<% } else { %>
+            	<a class="ui item right" href="/wall/new">Pin</a>
+            	<a class="ui item" href="/wall/<%= currentUser._id %>">Pinned</a>
+				<a class="ui item" href="/logout">Logout</a>
+			<% } %>
+		</div>
+		
+        <div class="grid">
+        <div class="grid-sizer">
+		</div>

@@ -1,0 +1,18 @@
+</div>
+<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script>
+    var grid = document.querySelector('.grid');
+    var msnry = new Masonry( grid, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true
+    });
+    imagesLoaded( grid ).on( 'progress', function() {
+  // layout Masonry after each image loads
+        msnry.layout();
+    });
+
+</script>
+</body>
+</html>

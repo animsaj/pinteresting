@@ -1,0 +1,24 @@
+<% include ./partials/header %>
+<% pins.forEach(function (pin) { %>
+     <div class="grid-item">
+        <img src="<%= pin.url %>" onerror="this.src='http://lorempixel.com/output/animals-q-c-640-480-7.jpg'">
+        <h5><em>Created by <a href="/wall/<%= pin.author.id %>"><%= pin.author.name %></a></em></h5>
+        <hr>
+        <p><%= pin.description %></p>
+        <h5>Pinned <%= pin.likes %> times</h5>
+        <% if(currentUser && !currentUser._id.equals(pin.author.id)) { %>
+            <form action="/wall/<%= pin._id %>/likes?_method=PUT" method="POST">
+                <button type="submit"><i class="map pin icon"></i></button>
+            </form>
+        <% } %>
+        <% if(currentUser && currentUser._id.equals(pin.author.id)) { %>
+            <a href="/wall/<%= pin._id %>/edit">
+                <button><i class="edit icon"></i></button>
+            </a>
+            <form id="delete-form" action="/wall/<%= pin._id %>?_method=DELETE" method="POST">
+                <button type="submit"><i class="remove icon"></i></button>
+            </form>
+        <% } %>
+     </div>
+<% }); %>
+<% include ./partials/footer %>
